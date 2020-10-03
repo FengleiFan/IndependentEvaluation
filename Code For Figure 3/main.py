@@ -50,6 +50,7 @@ Train_label = mnist.train.labels
 Test_input = mnist.test.images
 Test_label = mnist.test.labels
 
+########## The necessary functions
 
 def get_influence_on_test_loss(sess, grad_total_loss_op, test_indices, train_idx=None, 
         approx_type='lissa', approx_params=None, force_refresh=True, test_description=None,

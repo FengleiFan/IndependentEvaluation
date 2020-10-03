@@ -6,7 +6,7 @@ import numpy as np
 import lime
 import lime.lime_tabular
 
-### Before running this code, you need to install 
+### Before running this code, you need to install package lime
 
 np.random.seed(1)
 

@@ -1,0 +1,2 @@
+model_checkpoint_path: "iris.ckpt"
+all_model_checkpoint_paths: "iris.ckpt"

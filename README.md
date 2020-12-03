@@ -1,5 +1,5 @@
 This is the code of our independent evaluation for some existing intepretability methods. This independent evaluation is for our review paper
-"On Interpretability of Artificial Neural Networks " (https://arxiv.org/abs/2001.02522).
+"On Interpretability of Artificial Neural Networks: A Survey " (https://arxiv.org/abs/2001.02522).
 
 The required environment is TensorFlow 1.XX. You may have to download the necessary packages before you run this code. You can directly run most of code without getting a warning or error except the following one.
 

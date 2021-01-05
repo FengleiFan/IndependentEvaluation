@@ -267,7 +267,7 @@ hessian_vector = hessian_vector_product(total_loss, params, v_placeholder)
 
 grad_loss_wrt_input_op = tf.gradients(total_loss, x)        
 
-        # Because tf.gradients auto accumulates, we probably don't need the add_n (or even reduce_sum)        
+# Because tf.gradients auto accumulates, we probably don't need the add_n (or even reduce_sum)        
 influence_op = tf.add_n(
             [tf.reduce_sum(tf.multiply(a, array_ops.stop_gradient(b))) for a, b in zip(grad_total_loss_op, v_placeholder)])
 

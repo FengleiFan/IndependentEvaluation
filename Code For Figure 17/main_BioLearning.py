@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pickle
 
 
+### Loading CIFAR100
 def load_cifar100(filename):
 
     with open(filename, 'rb')as f:
@@ -14,12 +15,11 @@ def load_cifar100(filename):
                 
         return images, labels
     
-    
-
 images_train, labels_train = load_cifar100("./cifar-100-python/train")
 images_test, labels_test = load_cifar100("./cifar-100-python/test")
 
-M = images_train
+
+### The function to draw weights
 
 def draw_weights(synapses, Kx, Ky):
     yy=np.random.randint(90, size=1)
@@ -35,7 +35,10 @@ def draw_weights(synapses, Kx, Ky):
     plt.axis('off')
     fig.canvas.draw()
     
+   
+### Model hyperparamters
 
+M = images_train
 Nc=10
 N=3072
 Ns=50000
@@ -53,6 +56,7 @@ delta=0.4    # Strength of the anti-hebbian learning
 p=2.0        # Lebesgue norm of the weights
 k=2          # ranking parameter, must be integer that is bigger or equal than 2
 
+### Bio-learning
 
 fig=plt.figure(figsize=(12.9,10))
 

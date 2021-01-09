@@ -19,6 +19,7 @@ plt.rcParams.update({'font.size': 18})
 keras = tf.keras
 tfe.enable_eager_execution()
 
+### Initialize parameters
 
 t = np.linspace(0, 25, 200)
 h0 = tf.to_float([[1., 0.]])
@@ -34,6 +35,8 @@ class Lambda(tf.keras.Model):
 neural_ode = NeuralODE(Lambda(), t=t)
 hN, states_history = neural_ode.forward(h0, return_states="numpy")
 initial_path = np.concatenate(states_history)   
+
+### This is a function to plot the trajectory
 
 def plot_trajectory(trajectories, fig=True):
     if fig:
@@ -53,11 +56,13 @@ def plot_trajectory(trajectories, fig=True):
 
 plot_trajectory([initial_path]) 
 
+### Define model parameters
+
 optimizer = tf.train.MomentumOptimizer(learning_rate=1e-2, momentum=0.95)
-
 h0_var = tf.contrib.eager.Variable(h0)
-
 hN_target = tf.to_float([[0., 0.5]])
+
+### compute the gradient with respect to the h0 and W
 
 def compute_gradients_and_update():    
     with tf.GradientTape() as g:       

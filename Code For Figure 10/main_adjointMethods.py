@@ -6,7 +6,7 @@ import tensorflow as tf
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 import tensorflow.contrib.eager as tfe
-from neural_ode import NeuralODE
+from main_neural_ode import NeuralODE
 
 
 ### tf.enable_eager_execution must be called at program startup. Please restart your kernel.
